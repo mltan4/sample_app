@@ -1,10 +1,12 @@
 SampleApp::Application.routes.draw do
-  get "users/new"
+  #get "users/new" removed after putting resources: users
 
   #get "static_pages/home"
   #get "static_pages/help"
   #get "static_pages/about"
   #get "static_pages/contact"
+
+  resources :users
 
   root to: 'static_pages#home'
   match '/signup',  to: 'users#new'
