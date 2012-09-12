@@ -4,9 +4,9 @@ describe "Static pages" do
 
   describe "Home page" do
 
- it "should have the h1 'Welcome to Pacific Foods!'" do
+ it "should have the h1 'Welcome to Pacific Goods!'" do
       visit root_path
-      page.should have_selector('h1', :text => 'Welcome to Pacific Foods!')
+      page.should have_selector('h1', :text => 'Welcome to Pacific Goods!')
     end
 
     it "should have the base title" do
