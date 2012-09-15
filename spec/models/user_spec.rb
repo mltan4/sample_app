@@ -28,6 +28,8 @@ describe User do
   
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) } #Listing 8.15
+  it { should respond_to(:authenticate) }#Listing 8.15
   it { should be_valid }
   
   describe "with a password that's too short" do
@@ -118,4 +120,10 @@ describe "when email address is already taken" do
     before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
+
+  describe "remember token" do #Listing 8.17
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
+  end
+
 end
